@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -19,7 +19,8 @@ const (
 )
 type Card struct {
 	Number cardValue
-	TypeCard typeCard	
+	TypeCard typeCard
+	RecPos rl.Vector2	
 }
 func main() {
 	var cards [4][13]Card
