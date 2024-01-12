@@ -22,6 +22,7 @@ type Card struct {
 	TypeCard typeCard
 	RecPos rl.Vector2	
 }
+
 func main() {
 	var cards [4][13]Card
 	
