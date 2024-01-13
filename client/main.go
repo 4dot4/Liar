@@ -11,9 +11,6 @@ type Card struct {
 	RecDes    rl.Rectangle
 }
 
-//w 28
-//h 35
-
 func main() {
 	var cards [4][13]Card
 	var Width int32 = 800

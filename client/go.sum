@@ -1,3 +1,5 @@
+github.com/codecat/go-enet v0.0.0-20230124183417-a8586e7e37c4 h1:IfESNBZYAzRQzxcOIUzqpCcYQEaPM9awhFhMV/mi3TQ=
+github.com/codecat/go-enet v0.0.0-20230124183417-a8586e7e37c4/go.mod h1:sGvUVmO/h1mV+TB3h3AA7GBjDX6ZH8DkiF2dcyxPo38=
 github.com/ebitengine/purego v0.6.0-alpha.2 h1:lYSvMtNBEjNGAzqPC5WP7bHUOxkFU3L+JZMdxK7krkw=
 github.com/ebitengine/purego v0.6.0-alpha.2/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20240110102818-483e94e4d92e h1:t/kVA/quBlzLB+43QzIsHkFQrZs2ii79rk9NOofbQxs=
