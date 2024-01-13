@@ -12,6 +12,7 @@ type Card struct {
 }
 
 func main() {
+	go client()
 	var cards [4][13]Card
 	var Width int32 = 800
 	var Height int32 = 800
@@ -64,6 +65,7 @@ func main() {
 	x := 0
 
 	for !rl.WindowShouldClose() {
+
 		if rl.IsKeyPressed(rl.KeyD) {
 			if x < 3 {
 				x++
@@ -85,5 +87,6 @@ func main() {
 		rl.EndDrawing()
 
 	}
+
 	rl.CloseWindow()
 }
