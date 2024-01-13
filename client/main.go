@@ -63,7 +63,7 @@ func main() {
 	rl.InitWindow(Width, Height, "Liar")
 	rl.SetTargetFPS(60)
 
-	var Spritesheet rl.Texture2D = rl.LoadTexture("./assets/spritesheet.png")
+	var Spritesheet rl.Texture2D = rl.LoadTexture("../assets/spritesheet.png")
 	x := 0
 
 	for !rl.WindowShouldClose() {
