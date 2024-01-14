@@ -5,7 +5,7 @@ import (
 	"github.com/codecat/go-libs/log"
 )
 
-func client() {
+func client(ch chan [4][13]Card) {
 	// Initialize enet
 	enet.Initialize()
 
@@ -46,6 +46,8 @@ func client() {
 			log.Info("Received %d bytes from server", len(packet.GetData()))
 			packet.Destroy()
 		}
+		peer.SendString("bye", 0, enet.PacketFlagReliable)
+		
 	}
 
 	// Destroy the host when we're done with it
