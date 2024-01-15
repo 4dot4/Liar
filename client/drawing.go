@@ -38,7 +38,11 @@ func Drawintro(r *rayLogo) {
 
 }
 func drawClient(game *game) {
-
+	for i := 0; i < 4; i++ {
+		for k, v := range game.Cards[i] {
+			rl.DrawTexturePro(game.Spritesheet, v.RecSource, rl.Rectangle{X: float32(k * 29 * 2), Y: float32(i * 36 * 2), Width: 29 * 2, Height: 36 * 2}, rl.Vector2{0, 0}, 0, rl.White)
+		}
+	}
 }
 func drawing(game *game) {
 	rl.BeginDrawing()

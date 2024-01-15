@@ -13,7 +13,7 @@ func main() {
 	Game.GameScreen = Start
 	Game.RayLogo = rayLogo{logoPositionX: int32(Width/2 - 128), logoPositionY: int32(Heigth/2 - 128), framesCounter: 0, lettersCount: 0, topSideRecWidth: 16, leftSideRecHeight: 16, bottomSideRecWidth: 16, rightSideRecHeight: 16, alpha: 1}
 
-	channel := make(chan game, 5)
+	//channel := make(chan game, 5)
 
 	initSprites(&Game.Cards)
 
@@ -26,9 +26,9 @@ func main() {
 
 		switch Game.GameScreen {
 		case Client:
-			go client(channel)
+
 		case Server:
-			go server(channel)
+
 		}
 
 		update(&Game)

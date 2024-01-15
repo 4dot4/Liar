@@ -4,18 +4,20 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-type typeCard int32
-type cardValue int32
 type screens int32
+
+type typeCard struct {
+	CardValue int32
+	CardTeam  int32
+}
 type Card struct {
-	Number    cardValue
 	TypeCard  typeCard
 	RecSource rl.Rectangle
 	RecDes    rl.Rectangle
 }
 
 const (
-	Clubs typeCard = iota
+	Clubs = iota
 	Diamonds
 	Hearts
 	Spades
@@ -23,10 +25,10 @@ const (
 
 // card valuoes
 const (
-	As cardValue = 1
-	J  cardValue = 11
-	Q  cardValue = 12
-	K  cardValue = 13
+	As = 1
+	J  = 11
+	Q  = 12
+	K  = 13
 )
 
 // screens
@@ -60,8 +62,7 @@ func initSprites(cards *[4][13]Card) {
 		for x := 0; x < 13; x++ {
 			switch y {
 			case int(Clubs):
-				cards[y][x].TypeCard = Clubs
-				cards[y][x].Number = cardValue(x + 1)
+				cards[y][x].TypeCard.CardTeam = Clubs
 				cards[y][x].RecSource = rl.Rectangle{
 					X:      float32(x * 29),
 					Y:      0,
@@ -69,7 +70,8 @@ func initSprites(cards *[4][13]Card) {
 					Height: 36,
 				}
 			case int(Diamonds):
-				cards[y][x].TypeCard = Diamonds
+				cards[y][x].TypeCard.CardTeam = Diamonds
+
 				cards[y][x].RecSource = rl.Rectangle{
 					X:      float32((x * 29) + 376),
 					Y:      0,
@@ -77,7 +79,8 @@ func initSprites(cards *[4][13]Card) {
 					Height: 36,
 				}
 			case int(Hearts):
-				cards[y][x].TypeCard = Hearts
+				cards[y][x].TypeCard.CardTeam = Hearts
+
 				cards[y][x].RecSource = rl.Rectangle{
 					X:      float32((x * 29) + 753),
 					Y:      0,
@@ -85,7 +88,8 @@ func initSprites(cards *[4][13]Card) {
 					Height: 36,
 				}
 			case int(Spades):
-				cards[y][x].TypeCard = Spades
+				cards[y][x].TypeCard.CardTeam = Spades
+
 				cards[y][x].RecSource = rl.Rectangle{
 					X:      float32((x * 29) + 1130),
 					Y:      0,
@@ -94,7 +98,7 @@ func initSprites(cards *[4][13]Card) {
 				}
 
 			}
-			cards[y][x].Number = cardValue(x + 1)
+			cards[y][x].TypeCard.CardValue = int32(x + 1)
 		}
 	}
 }

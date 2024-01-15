@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func intro(r *rayLogo, screen *screens) {
 	if r.state == 0 { // State 0: Small box blinking
 		r.framesCounter++
@@ -41,9 +43,15 @@ func intro(r *rayLogo, screen *screens) {
 	}
 
 }
+func updateClient(game *game) {
+	myHand := []typeCard{{CardValue: As, CardTeam: Diamonds}, {CardValue: 2, CardTeam: Hearts}}
+	fmt.Println(myHand)
+}
 func update(game *game) {
 	switch game.GameScreen {
 	case Start:
 		intro(&game.RayLogo, &game.GameScreen)
+	case Client:
+		updateClient(game)
 	}
 }
