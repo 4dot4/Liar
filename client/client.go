@@ -5,7 +5,7 @@ import (
 	"github.com/codecat/go-libs/log"
 )
 
-func client(ch chan [4][13]Card) {
+func client(ch chan game) {
 	// Initialize enet
 	enet.Initialize()
 

@@ -37,6 +37,9 @@ func Drawintro(r *rayLogo) {
 	}
 
 }
+func drawClient(game *game) {
+
+}
 func drawing(game *game) {
 	rl.BeginDrawing()
 	rl.ClearBackground(rl.White)
@@ -44,6 +47,7 @@ func drawing(game *game) {
 	case Start:
 		Drawintro(&game.RayLogo)
 	case Client:
+		drawClient(game)
 	case Server:
 
 	}
