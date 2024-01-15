@@ -32,9 +32,28 @@ const (
 // screens
 const (
 	Start screens = iota
-	Host
+	Client
 	Server
 )
+
+type game struct {
+	RayLogo     rayLogo
+	Cards       [4][13]Card
+	GameScreen  screens
+	Spritesheet rl.Texture2D
+}
+type rayLogo struct {
+	logoPositionX      int32
+	logoPositionY      int32
+	framesCounter      int32
+	lettersCount       int32
+	topSideRecWidth    int32
+	leftSideRecHeight  int32
+	bottomSideRecWidth int32
+	rightSideRecHeight int32
+	state              int32
+	alpha              float32
+}
 
 func initSprites(cards *[4][13]Card) {
 	for y := 0; y < 4; y++ {

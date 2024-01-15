@@ -4,16 +4,48 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-func drawing(Spritesheet *rl.Texture2D, cards *[4][13]Card, GameScreen *screens) {
+func Drawintro(r *rayLogo) {
+	if r.state == 0 {
+		if (r.framesCounter/15)%2 == 1 {
+			rl.DrawRectangle(r.logoPositionX, r.logoPositionY, 16, 16, rl.Black)
+		}
+	} else if r.state == 1 {
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY, r.topSideRecWidth, 16, rl.Black)
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY, 16, r.leftSideRecHeight, rl.Black)
+	} else if r.state == 2 {
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY, r.topSideRecWidth, 16, rl.Black)
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY, 16, r.leftSideRecHeight, rl.Black)
+
+		rl.DrawRectangle(r.logoPositionX+240, r.logoPositionY, 16, r.rightSideRecHeight, rl.Black)
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY+240, r.bottomSideRecWidth, 16, rl.Black)
+	} else if r.state == 3 {
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY, r.topSideRecWidth, 16, rl.Fade(rl.Black, r.alpha))
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY+16, 16, r.leftSideRecHeight-32, rl.Fade(rl.Black, r.alpha))
+
+		rl.DrawRectangle(r.logoPositionX+240, r.logoPositionY+16, 16, r.rightSideRecHeight-32, rl.Fade(rl.Black, r.alpha))
+		rl.DrawRectangle(r.logoPositionX, r.logoPositionY+240, r.bottomSideRecWidth, 16, rl.Fade(rl.Black, r.alpha))
+		text := "raylib"
+		length := int32(len(text))
+
+		rl.DrawRectangle(int32(rl.GetScreenWidth()/2-112), int32(rl.GetScreenHeight()/2-112), 224, 224, rl.Fade(rl.RayWhite, r.alpha))
+		if r.lettersCount > length {
+			r.lettersCount = length
+		}
+		rl.DrawText(text[0:r.lettersCount], int32(rl.GetScreenWidth()/2-44), int32(rl.GetScreenHeight()/2+48), 50, rl.Fade(rl.Black, r.alpha))
+	} else if r.state == 4 {
+		rl.DrawText("[R] REPLAY", 340, 200, 20, rl.Gray)
+	}
+
+}
+func drawing(game *game) {
 	rl.BeginDrawing()
 	rl.ClearBackground(rl.White)
-	for i := 0; i < 4; i++ {
-		for _, v := range cards[i] {
+	switch game.GameScreen {
+	case Start:
+		Drawintro(&game.RayLogo)
+	case Client:
+	case Server:
 
-			rl.DrawTexturePro(*Spritesheet, v.RecSource, rl.Rectangle{X: float32(29 * i * 2), Y: float32(36 * i * 2), Width: 29 * 2, Height: 36 * 2}, rl.Vector2{0, 0}, 0, rl.White)
-		}
-
-		//rl.DrawTexturePro(Spritesheet, cards[x][i].RecSource, rl.Rectangle{X: float32((29 * 2) * i), Y: 1, Width: 29 * 2, Height: 36 * 2}, rl.Vector2{X: 0, Y: 0}, 0, rl.White)
 	}
 
 	rl.EndDrawing()
