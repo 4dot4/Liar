@@ -47,7 +47,7 @@ func client(ch chan game) {
 			packet.Destroy()
 		}
 		peer.SendString("bye", 0, enet.PacketFlagReliable)
-		
+
 	}
 
 	// Destroy the host when we're done with it

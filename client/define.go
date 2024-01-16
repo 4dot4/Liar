@@ -13,7 +13,6 @@ type typeCard struct {
 type Card struct {
 	TypeCard  typeCard
 	RecSource rl.Rectangle
-	RecDes    rl.Rectangle
 }
 
 const (
@@ -43,6 +42,8 @@ type game struct {
 	Cards       [4][13]Card
 	GameScreen  screens
 	Spritesheet rl.Texture2D
+	Map         map[typeCard]rl.Rectangle
+	Hand        []typeCard
 }
 type rayLogo struct {
 	logoPositionX      int32
@@ -57,48 +58,42 @@ type rayLogo struct {
 	alpha              float32
 }
 
-func initSprites(cards *[4][13]Card) {
+func initSprites() map[typeCard]rl.Rectangle {
+	Map := make(map[typeCard]rl.Rectangle)
 	for y := 0; y < 4; y++ {
 		for x := 0; x < 13; x++ {
 			switch y {
 			case int(Clubs):
-				cards[y][x].TypeCard.CardTeam = Clubs
-				cards[y][x].RecSource = rl.Rectangle{
+				Map[typeCard{CardValue: int32(x + 1), CardTeam: Clubs}] = rl.Rectangle{
 					X:      float32(x * 29),
 					Y:      0,
 					Width:  29,
 					Height: 36,
 				}
 			case int(Diamonds):
-				cards[y][x].TypeCard.CardTeam = Diamonds
-
-				cards[y][x].RecSource = rl.Rectangle{
+				Map[typeCard{CardValue: int32(x + 1), CardTeam: Diamonds}] = rl.Rectangle{
 					X:      float32((x * 29) + 376),
 					Y:      0,
 					Width:  29,
 					Height: 36,
 				}
-			case int(Hearts):
-				cards[y][x].TypeCard.CardTeam = Hearts
 
-				cards[y][x].RecSource = rl.Rectangle{
+			case int(Hearts):
+				Map[typeCard{CardValue: int32(x + 1), CardTeam: Hearts}] = rl.Rectangle{
 					X:      float32((x * 29) + 753),
 					Y:      0,
 					Width:  29,
 					Height: 36,
 				}
 			case int(Spades):
-				cards[y][x].TypeCard.CardTeam = Spades
-
-				cards[y][x].RecSource = rl.Rectangle{
+				Map[typeCard{CardValue: int32(x + 1), CardTeam: Spades}] = rl.Rectangle{
 					X:      float32((x * 29) + 1130),
 					Y:      0,
 					Width:  29,
 					Height: 36,
 				}
-
 			}
-			cards[y][x].TypeCard.CardValue = int32(x + 1)
 		}
 	}
+	return Map
 }

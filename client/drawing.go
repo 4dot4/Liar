@@ -4,7 +4,28 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
+func drawClient(game *game) {
+	for k, v := range game.Hand {
+		rl.DrawTexturePro(game.Spritesheet, game.Map[v], rl.Rectangle{X: float32(k * 29 * 3), Y: 40, Width: 29 * 3, Height: 29 * 3}, rl.Vector2{0, 0}, 0, rl.White)
+	}
+}
+func drawing(game *game, hand *[]typeCard) {
+	rl.BeginDrawing()
+	rl.ClearBackground(rl.White)
+	switch game.GameScreen {
+	case Start:
+		Drawintro(&game.RayLogo)
+	case Client:
+		drawClient(game)
+	case Server:
+
+	}
+
+	rl.EndDrawing()
+}
+//raylib logo intro DO NOT OPEN NEVER
 func Drawintro(r *rayLogo) {
+
 	if r.state == 0 {
 		if (r.framesCounter/15)%2 == 1 {
 			rl.DrawRectangle(r.logoPositionX, r.logoPositionY, 16, 16, rl.Black)
@@ -36,25 +57,4 @@ func Drawintro(r *rayLogo) {
 		rl.DrawText("[R] REPLAY", 340, 200, 20, rl.Gray)
 	}
 
-}
-func drawClient(game *game) {
-	for i := 0; i < 4; i++ {
-		for k, v := range game.Cards[i] {
-			rl.DrawTexturePro(game.Spritesheet, v.RecSource, rl.Rectangle{X: float32(k * 29 * 2), Y: float32(i * 36 * 2), Width: 29 * 2, Height: 36 * 2}, rl.Vector2{0, 0}, 0, rl.White)
-		}
-	}
-}
-func drawing(game *game) {
-	rl.BeginDrawing()
-	rl.ClearBackground(rl.White)
-	switch game.GameScreen {
-	case Start:
-		Drawintro(&game.RayLogo)
-	case Client:
-		drawClient(game)
-	case Server:
-
-	}
-
-	rl.EndDrawing()
 }

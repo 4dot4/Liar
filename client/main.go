@@ -15,9 +15,9 @@ func main() {
 
 	//channel := make(chan game, 5)
 
-	initSprites(&Game.Cards)
+	Game.Map = initSprites()
 
-	rl.InitWindow(800, 800, "The Liar")
+	rl.InitWindow(Width, Heigth, "The Liar")
 	rl.SetTargetFPS(60)
 
 	Game.Spritesheet = rl.LoadTexture("../assets/spritesheet.png")
@@ -32,7 +32,7 @@ func main() {
 		}
 
 		update(&Game)
-		drawing(&Game)
+		drawing(&Game, &Game.Hand)
 
 	}
 	rl.UnloadTexture(Game.Spritesheet)

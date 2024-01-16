@@ -47,7 +47,7 @@ func server(ch chan game) {
 				ev.GetPeer().SendString("pong", ev.GetChannelID(), enet.PacketFlagReliable)
 				continue
 			}
-
+			
 			// Disconnect the peer if they say "bye"
 			if string(packetBytes) == "bye" {
 				log.Info("Bye!")
