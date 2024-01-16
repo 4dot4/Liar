@@ -19,7 +19,7 @@ func main() {
 
 	rl.InitWindow(Width, Heigth, "The Liar")
 	rl.SetTargetFPS(60)
-
+	go client()
 	Game.Spritesheet = rl.LoadTexture("../assets/spritesheet.png")
 
 	for !rl.WindowShouldClose() {

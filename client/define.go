@@ -44,6 +44,7 @@ type game struct {
 	Spritesheet rl.Texture2D
 	Map         map[typeCard]rl.Rectangle
 	Hand        []typeCard
+	Channel     chan game
 }
 type rayLogo struct {
 	logoPositionX      int32

@@ -4,7 +4,7 @@ import (
 	"github.com/codecat/go-libs/log"
 )
 
-func server(ch chan game) {
+func server() {
 	// Initialize enet
 	enet.Initialize()
 

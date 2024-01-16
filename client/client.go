@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/codecat/go-enet"
 	"github.com/codecat/go-libs/log"
 )
 
-func client(ch chan game) {
+func client() {
 	// Initialize enet
 	enet.Initialize()
 
@@ -44,9 +46,9 @@ func client(ch chan game) {
 		case enet.EventReceive: // The server sent us data
 			packet := ev.GetPacket()
 			log.Info("Received %d bytes from server", len(packet.GetData()))
+			fmt.Printf("data received %s from the server\n", packet.GetData())
 			packet.Destroy()
 		}
-		peer.SendString("bye", 0, enet.PacketFlagReliable)
 
 	}
 
