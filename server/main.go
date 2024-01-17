@@ -58,7 +58,7 @@ func main() {
 		}
 	}
 
-	rl.InitWindow(Width, Height, "Liar")
+	rl.InitWindow(Width, Height, "Liar SERVER")
 	rl.SetTargetFPS(60)
 
 	var Spritesheet rl.Texture2D = rl.LoadTexture("../assets/spritesheet.png")
