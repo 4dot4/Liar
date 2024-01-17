@@ -4,10 +4,14 @@ github.com/codecat/go-libs v0.0.0-20210906174629-ffa6674c8e05 h1:JSfDXHJvrIpQ8Ag
 github.com/codecat/go-libs v0.0.0-20210906174629-ffa6674c8e05/go.mod h1:xJW98cHEb+Kbuu0qmoKzExh3blthZqojIYOFo27VgvE=
 github.com/ebitengine/purego v0.6.0-alpha.2 h1:lYSvMtNBEjNGAzqPC5WP7bHUOxkFU3L+JZMdxK7krkw=
 github.com/ebitengine/purego v0.6.0-alpha.2/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
+github.com/ebitengine/purego v0.6.0-alpha.3 h1:X14PEJIWBD+ipyiZn804s5uB41TH6OJUjNgvcSY9Eoo=
+github.com/ebitengine/purego v0.6.0-alpha.3/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
 github.com/fatih/color v1.16.0 h1:zmkK9Ngbjj+K0yRhTVONQh1p/HknKYSlNT+vZCzyokM=
 github.com/fatih/color v1.16.0/go.mod h1:fL2Sau1YI5c0pdGEVCbKQbLXB6edEj1ZgiY4NijnWvE=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20240110102818-483e94e4d92e h1:t/kVA/quBlzLB+43QzIsHkFQrZs2ii79rk9NOofbQxs=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20240110102818-483e94e4d92e/go.mod h1:P/hDjVwz/9fhR0ww3+umzDpDA7Bf7Tce4xNChHIEFqE=
+github.com/gen2brain/raylib-go/raylib v0.0.0-20240116120507-49aab27a9ba4 h1:0hUSeweWdvjMdmJlUtFyy5N3bFN9YTFQiGO0rp6WCFE=
+github.com/gen2brain/raylib-go/raylib v0.0.0-20240116120507-49aab27a9ba4/go.mod h1:P/hDjVwz/9fhR0ww3+umzDpDA7Bf7Tce4xNChHIEFqE=
 github.com/mattn/go-colorable v0.1.13 h1:fFA4WZxdEF4tXPZVKMLwD8oUnCTTo08duU7wxecdEvA=
 github.com/mattn/go-colorable v0.1.13/go.mod h1:7S9/ev0klgBDR4GtXTXX8a3vIGJpMovkB8vQcUbaXHg=
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=

@@ -1,4 +1,5 @@
 package main
+
 import (
 	"github.com/codecat/go-enet"
 	"github.com/codecat/go-libs/log"
@@ -16,7 +17,7 @@ func server() {
 	}
 
 	// The event loop
-	for{
+	for {
 		// Wait until the next event
 		ev := host.Service(1000)
 
@@ -47,7 +48,7 @@ func server() {
 				ev.GetPeer().SendString("pong", ev.GetChannelID(), enet.PacketFlagReliable)
 				continue
 			}
-			
+
 			// Disconnect the peer if they say "bye"
 			if string(packetBytes) == "bye" {
 				log.Info("Bye!")
