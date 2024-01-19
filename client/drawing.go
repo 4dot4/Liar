@@ -6,7 +6,7 @@ import (
 
 func drawClient(game *game) {
 	for k, v := range game.Hand {
-		rl.DrawTexturePro(game.Spritesheet, game.Map[v], rl.Rectangle{X: float32(k * 29 * 3), Y: 40, Width: 29 * 3, Height: 29 * 3}, rl.Vector2{0, 0}, 0, rl.White)
+		rl.DrawTexturePro(game.Spritesheet, game.Map[v], rl.Rectangle{X: float32(k * 29 * scale), Y: 40, Width: 29 * scale, Height: 36 * scale}, rl.Vector2{0, 0}, 0, rl.White)
 	}
 }
 func drawing(game *game, hand *[]typeCard) {
@@ -23,7 +23,8 @@ func drawing(game *game, hand *[]typeCard) {
 
 	rl.EndDrawing()
 }
-//raylib logo intro DO NOT OPEN NEVER
+
+// raylib logo intro DO NOT OPEN NEVER
 func Drawintro(r *rayLogo) {
 
 	if r.state == 0 {

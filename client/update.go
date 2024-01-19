@@ -1,8 +1,11 @@
 package main
 
 func updateClient(game *game) {
-	game.Hand = []typeCard{{CardValue: K, CardTeam: Hearts}, {CardValue: Q, CardTeam: Spades}, {CardValue: J, CardTeam: Clubs}}
-	
+	game.Hand = []typeCard{
+		{CardValue: As, CardTeam: Hearts},
+		{CardValue: 2, CardTeam: Hearts},
+		{CardValue: 3, CardTeam: Hearts}}
+
 }
 func update(game *game) {
 	switch game.GameScreen {

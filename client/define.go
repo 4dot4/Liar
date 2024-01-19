@@ -20,14 +20,16 @@ const (
 	Diamonds
 	Hearts
 	Spades
+	back 
 )
 
 // card valuoes
 const (
-	As = 1
-	J  = 11
-	Q  = 12
-	K  = 13
+	As    = 1
+	J     = 11
+	Q     = 12
+	K     = 13
+	scale = 2
 )
 
 // screens
