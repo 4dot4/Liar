@@ -46,12 +46,11 @@ const (
 )
 
 type game struct {
-	RayLogo rayLogo
+	RayLogo     rayLogo
 	GameScreen  screens
 	Spritesheet rl.Texture2D
 	Map         map[typeCard]rl.Rectangle
 	Hand        []typeCard
-	Channel     chan []typeCard
 }
 type rayLogo struct {
 	logoPositionX      int32

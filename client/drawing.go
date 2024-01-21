@@ -17,7 +17,7 @@ func drawing(game *game, hand *[]typeCard) {
 		Drawintro(&game.RayLogo)
 	case Client:
 		drawClient(game)
-		rl.DrawText("CARDS", int32(rl.GetScreenWidth()/2)-150, int32(rl.GetScreenHeight()/2), 60, rl.White)
+		rl.DrawText("CARDS", int32(rl.GetScreenWidth()/2-102), int32(rl.GetScreenHeight()/2), 60, rl.White)
 	case Server:
 
 	}

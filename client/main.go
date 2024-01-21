@@ -7,10 +7,10 @@ import (
 func main() {
 	var Game game
 
-	go server(Game.Channel)
-	Game.GameScreen = Start
+	go server()
+	go client()
 
-	//channel := make(chan game, 5)
+	Game.GameScreen = Start
 
 	Game.Map = initSprites()
 
