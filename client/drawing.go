@@ -11,12 +11,13 @@ func drawClient(game *game) {
 }
 func drawing(game *game, hand *[]typeCard) {
 	rl.BeginDrawing()
-	rl.ClearBackground(rl.White)
+	rl.ClearBackground(rl.DarkBlue)
 	switch game.GameScreen {
 	case Start:
 		Drawintro(&game.RayLogo)
 	case Client:
 		drawClient(game)
+		rl.DrawText("CARDS", int32(rl.GetScreenWidth()/2)-150, int32(rl.GetScreenHeight()/2), 60, rl.White)
 	case Server:
 
 	}

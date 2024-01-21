@@ -6,18 +6,15 @@ import (
 
 func main() {
 	var Game game
-	const (
-		Width  = 800
-		Heigth = 800
-	)
-	go server()
+
+	go server(Game.Channel)
 	Game.GameScreen = Start
 
 	//channel := make(chan game, 5)
 
 	Game.Map = initSprites()
 
-	rl.InitWindow(Width, Heigth, "The Liar")
+	rl.InitWindow(Width, Heigth, "CARDS")
 	rl.SetWindowState(rl.FlagWindowResizable)
 	rl.SetTargetFPS(60)
 
