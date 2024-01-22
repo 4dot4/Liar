@@ -45,6 +45,10 @@ const (
 	Server
 )
 
+type player struct {
+	Name string
+	Id   int
+}
 type game struct {
 	RayLogo     rayLogo
 	GameScreen  screens

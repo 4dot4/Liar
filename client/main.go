@@ -8,7 +8,6 @@ func main() {
 	var Game game
 
 	go server()
-	go client()
 
 	Game.GameScreen = Start
 

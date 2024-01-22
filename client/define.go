@@ -4,8 +4,6 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-
-
 func initSprites() map[typeCard]rl.Rectangle {
 	Map := make(map[typeCard]rl.Rectangle)
 	for y := 0; y < 4; y++ {
