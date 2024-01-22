@@ -10,10 +10,9 @@ import (
 	"time"
 )
 
-func client() {
-	fmt.Println("ADENTREI DESGRACA")
+func getInRoom() {
 	c := http.Client{Timeout: time.Duration(1) * time.Second}
-	req, err := http.NewRequest("GET", "http://localhost:8080/cards", nil)
+	req, err := http.NewRequest("GET", "http://localhost:8080/room", nil)
 	if err != nil {
 		fmt.Printf("error %s", err)
 		return
@@ -37,4 +36,9 @@ func client() {
 	fmt.Println(hand)
 
 	fmt.Printf("Response status : %s \n", resp.Status)
+}
+func client() {
+
+	getInRoom()
+
 }
